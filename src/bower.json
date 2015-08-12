@@ -1,0 +1,15 @@
+{
+  "name": "web-starter-kit",
+  "version": "0.0.1",
+  "dependencies": {
+    "requirejs": "2.1.20",
+    "requirejs-domready": "2.0.1",
+    "requirejs-text": "2.0.14",
+    "json2": "latest",
+    "jquery": "2.1.4",
+    "bootstrap": "3.3.5",
+    "font-awesome": "4.4.0",
+    "angular": "1.4.3",
+    "angular-route": "1.4.4-build.4164+sha.f827a8e"
+  }
+}
