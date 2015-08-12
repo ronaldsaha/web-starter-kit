@@ -1,6 +1,6 @@
 //noinspection Annotator
 require.config({
-    baseUrl: '.',
+    baseUrl: 'scripts',
     paths: {
         'domReady': '../../packages/requirejs-domready/domReady',
         'text': '../../packages/requirejs-text/text',
@@ -25,7 +25,7 @@ require.config({
         }
     },
     deps: [
-        './main'
+        'main'
     ]
     //,urlArgs: 'v=' + new Date().getTime()
 });

@@ -1,5 +1,7 @@
 # web-starter-kit
 
+### requirejs pattern for separate configuration file
+[config file link](https://github.com/jrburke/requirejs/wiki/Patterns-for-separating-config-from-the-main-module)
 
 #### angularjs-starter-kit
 [article link](http://www.startersquad.com/blog/angularjs-requirejs/)
