@@ -1,0 +1,15 @@
+{
+    "name": "web-starter-kit",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ronaldsaha/web-starter-kit.git"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-util": "^3.0.6",
+        "gulp-minify-css": "^1.2.1",
+        "gulp-replace": "^0.5.4"
+    }
+}
