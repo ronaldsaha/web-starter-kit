@@ -1,4 +1,4 @@
-require(['domReady!','application/application'], function (document, application) {
+require(['domReady!','jQuery'], function (document,$) {
     //This function is called once the DOM is ready,
     //notice the value for 'domReady!' is the current
     //document.
