@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    file = require('gulp-file'),
     fs = require('fs'),
     runSequence = require('run-sequence'),
     del = require('del'),
@@ -49,8 +50,7 @@ gulp.task('lint-source', function () {
 });
 
 gulp.task('generate-source-references', function () {
-    fs.writeFile('dist/scripts/AllSourceReferences.ts', '//{\n\n//}');
-    return gulp.src('dist/scripts/AllSourceReferences.ts')
+    return file('AllSourceReferences.ts', '//{\n\n//}', { src: true })
         .pipe(inject(gulp.src(['src/scripts/**/*.ts'], {read: false}), {
             starttag: '//{',
             endtag: '//}',
@@ -83,7 +83,8 @@ gulp.task('watch', function () {
 gulp.task('default', function () {
     runSequence(
         'build-clean',
-        ['copy-styles-assets', 'minify-styles'],
+        'copy-styles-assets',
+        'minify-styles',
         'lint-source',
         'generate-source-references',
         'transpile-source'
