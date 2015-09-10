@@ -13,9 +13,12 @@ var gulp = require('gulp'),
     tslint = require('gulp-tslint'),
     sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('build-clean', function () {
-    //del('dist/scripts/**');
-    //del('dist/styles/**');
+var tsProject = tsc.createProject('tsconfig.json');
+
+gulp.task('build-clean', function (callback) {
+    del.sync('dist/scripts/**');
+    del.sync('dist/styles/**');
+    callback();
 });
 
 gulp.task('copy-styles-assets', function () {
@@ -30,20 +33,6 @@ gulp.task('minify-styles', function () {
         .pipe(replace('url(../../packages/font-awesome/fonts', 'url(fonts/font-awesome'))
         .pipe(gulp.dest('dist/styles/'));
 });
-
-//gulp.task('minify-source', function () {
-//    return rjs({
-//        baseUrl: "src/scripts",
-//        mainConfigFile: 'src/scripts/configuration.js',
-//        name: 'main',
-//        out: 'main.js',
-//        preserveLicenseComments: false
-//    })
-//        .pipe(uglify())
-//        .pipe(gulp.dest('dist/scripts/'));
-//});
-
-//gulp.task('default', ['copy-styles-assets', 'minify-styles', 'minify-source']);
 
 gulp.task('lint-source', function () {
     return gulp.src('src/scripts/**/*.ts').pipe(tslint()).pipe(tslint.report('prose'));
@@ -62,17 +51,9 @@ gulp.task('generate-source-references', function () {
 
 gulp.task('transpile-source', function () {
     var transpiled = gulp.src(['src/scripts/**/*.ts', 'packages/typings/**/*.ts', 'dist/scripts/AllSourceReferences.ts'])
-        .pipe(sourcemaps.init())
-        .pipe(tsc({
-            target: 'ES5',
-            declarationFiles: false,
-            noExternalResolve: true
-        }));
+        .pipe(tsc(tsProject));
+    return transpiled.js.pipe(gulp.dest('dist/scripts/src'));
 
-    transpiled.dts.pipe(gulp.dest('dist/scripts/src'));
-    return transpiled.js
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/scripts/src'));
 });
 
 gulp.task('watch', function () {
@@ -93,3 +74,29 @@ gulp.task('default', function () {
 
 
 
+////////////////////
+//Source minification code using require js
+//gulp.task('minify-source', function () {
+//    return rjs({
+//        baseUrl: "src/scripts",
+//        mainConfigFile: 'src/scripts/configuration.js',
+//        name: 'main',
+//        out: 'main.js',
+//        preserveLicenseComments: false
+//    })
+//        .pipe(uglify())
+//        .pipe(gulp.dest('dist/scripts/'));
+//});
+////////////////////
+//Type script compiling sample
+//    var transpiled = gulp.src(['src/scripts/**/*.ts', 'packages/typings/**/*.ts', 'dist/scripts/AllSourceReferences.ts'])
+//        .pipe(sourcemaps.init())
+//        .pipe(tsc());
+//    transpiled.dts.pipe(gulp.dest('dist/scripts/src'));
+//    return transpiled.js
+//        .pipe(sourcemaps.write('.'))
+//        .pipe(gulp.dest('dist/scripts/src'));
+////////////////////
+//Type script compiling sample with tsconfig without source [not working]
+//    var transpiled = tsProject.src()
+//        .pipe(tsc(tsProject));
