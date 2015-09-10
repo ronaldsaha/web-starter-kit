@@ -5,7 +5,7 @@ class Application {
         this.name = name;
     }
 
-    getName() {
-        return this.name;
+    start() {
+        console.log(this.name)
     }
 }

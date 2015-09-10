@@ -50,9 +50,11 @@ gulp.task('generate-source-references', function () {
 });
 
 gulp.task('transpile-source', function () {
-    var transpiled = gulp.src(['src/scripts/**/*.ts', 'packages/typings/**/*.ts', 'dist/scripts/AllSourceReferences.ts'])
+    var transpiled = gulp.src('src/scripts/Main.ts')
         .pipe(tsc(tsProject));
-    return transpiled.js.pipe(gulp.dest('dist/scripts/src'));
+//    var transpiled = tsProject.src()
+//        .pipe(tsc(tsProject));
+    return transpiled.js.pipe(gulp.dest('dist/scripts'));
 
 });
 
@@ -71,7 +73,6 @@ gulp.task('default', function () {
         'transpile-source'
     );
 });
-
 
 
 ////////////////////
