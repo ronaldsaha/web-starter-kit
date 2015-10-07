@@ -6,7 +6,7 @@ require.config({
         'text': '../../packages/requirejs-text/text',
         'JSON': '../../packages/json2/json2',
         'jQuery': '../../packages/jquery/dist/jquery.min',
-        'bootstrap':'../../packages/bootstrap/dist/js/bootstrap.min',
+        'bootstrap': '../../packages/bootstrap/dist/js/bootstrap.min',
         'angular': '../../packages/angular/angular',
         'angular-route': '../../packages/angular-route/angular-route'
     },
