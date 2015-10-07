@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
         "target": "ES5",
-        "module": "commonjs",
+        "module": "amd",
         "sourceMap": true,
         "inlineSourceMap": true,
-        "inlineSources":true,
-        "removeComments": true,
-        "out": "Main.js"
+        "inlineSources": true,
+        "removeComments": true
     }
 }

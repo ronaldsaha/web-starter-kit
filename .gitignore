@@ -4,6 +4,8 @@
 # Custom
 dist
 packages_typescript
+src/scripts/**/*.js
+src/scripts/**/*.js.map
 
 ########################################
 ########################################

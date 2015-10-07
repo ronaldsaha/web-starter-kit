@@ -1,7 +1,4 @@
-require(['domReady!','jQuery'], function (document,$) {
-    //This function is called once the DOM is ready,
-    //notice the value for 'domReady!' is the current
-    //document.
-
-    console.log('Hello world')
+define(["require", "exports", 'application/application'], function (require, exports, Application) {
+    new Application('Hello World').start();
 });
+//# sourceMappingURL=main.js.map

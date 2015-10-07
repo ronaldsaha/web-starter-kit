@@ -1,15 +1,18 @@
 {
-  "version": "v4",
-  "repo": "borisyankov/DefinitelyTyped",
-  "ref": "master",
-  "path": "packages_typescript",
-  "bundle": "packages_typescript/tsd.d.ts",
-  "installed": {
-    "angularjs/angular.d.ts": {
-      "commit": "04a025ada3492a22df24ca2d8521c911697721b3"
-    },
-    "jquery/jquery.d.ts": {
-      "commit": "04a025ada3492a22df24ca2d8521c911697721b3"
+    "version": "v4",
+    "repo": "borisyankov/DefinitelyTyped",
+    "ref": "master",
+    "path": "packages_typescript",
+    "bundle": "packages_typescript/tsd.d.ts",
+    "installed": {
+        "requirejs/require.d.ts": {
+            "commit": "7c374bf1e59ce14e9e28207e2ba2ab202ba55350"
+        },
+        "angularjs/angular.d.ts": {
+            "commit": "04a025ada3492a22df24ca2d8521c911697721b3"
+        },
+        "jquery/jquery.d.ts": {
+            "commit": "04a025ada3492a22df24ca2d8521c911697721b3"
+        }
     }
-  }
 }
